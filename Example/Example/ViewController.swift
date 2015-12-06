@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         PIQ.doSomething()
         
         imageView.piQ_RoundImage()
+        imageView.piQ_convertToGrayScale(.Dots)
   
         // Do any additional setup after loading the view, typically from a nib.
     }
