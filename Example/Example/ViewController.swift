@@ -11,12 +11,15 @@ import piQ
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
     let PIQ = piQ()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         PIQ.doSomething()
+        
+        imageView.piQ_RoundImage()
   
         // Do any additional setup after loading the view, typically from a nib.
     }

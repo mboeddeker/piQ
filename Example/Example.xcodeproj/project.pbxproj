@@ -354,6 +354,7 @@
 				7C3397D01C13B13800F7CCA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
