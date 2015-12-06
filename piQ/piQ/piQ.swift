@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 public class piQ{
@@ -16,5 +17,15 @@ public class piQ{
     
     public func doSomething(){
     print("Yeah, it works")
+    }
+    
+
+}
+
+extension UIImageView {
+    
+    public func piQ_RoundImage(){
+        self.clipsToBounds = true
+        self.layer.cornerRadius = self.frame.size.width / 2
     }
 }
