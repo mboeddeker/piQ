@@ -33,14 +33,44 @@
                                     <constraint firstAttribute="height" constant="300" id="sd0-wU-mF9"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3r6-re-NoX">
+                                <rect key="frame" x="261" y="505" width="78" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.95979300049837712" green="0.93506002506280372" blue="0.98952879581151831" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="exq-30-tCR"/>
+                                    <constraint firstAttribute="width" constant="78" id="raW-eY-1mW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="tintButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vwk-97-gCw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA8-ad-8L3">
+                                <rect key="frame" x="261" y="543" width="78" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.98952879581151831" green="0.98481684482638687" blue="0.85043783505260417" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TVF-UW-S48"/>
+                                    <constraint firstAttribute="width" constant="78" id="Vpt-Vx-4nG"/>
+                                </constraints>
+                                <state key="normal" title="Rotate"/>
+                                <connections>
+                                    <action selector="rotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JHd-rc-fGA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3r6-re-NoX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NJs-qK-WNI"/>
                             <constraint firstItem="poN-8t-KYO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rzl-wB-6Xs"/>
+                            <constraint firstItem="3r6-re-NoX" firstAttribute="top" secondItem="poN-8t-KYO" secondAttribute="bottom" constant="55" id="TxV-11-TZW"/>
+                            <constraint firstItem="DA8-ad-8L3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jzK-ss-tjT"/>
                             <constraint firstItem="vz3-pE-Mfx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p99-nG-t9D"/>
                             <constraint firstItem="poN-8t-KYO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tNH-zL-QDZ"/>
                             <constraint firstItem="vz3-pE-Mfx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v1l-m2-TSm"/>
+                            <constraint firstItem="DA8-ad-8L3" firstAttribute="top" secondItem="3r6-re-NoX" secondAttribute="bottom" constant="8" id="zDU-xi-Djw"/>
                         </constraints>
                     </view>
                     <connections>

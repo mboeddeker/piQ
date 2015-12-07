@@ -13,6 +13,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBAction func tintButton(sender: AnyObject) {
+        
+        imageView.piQ_tintImageColor(UIColor.blueColor().colorWithAlphaComponent(0.1))
+        
+    }
+    
+    @IBAction func rotate(sender: AnyObject) {
+        imageView.piQ_rotateImageWithAnimation(6)
+    }
+    
+    
     let PIQ = piQ()
 
     override func viewDidLoad() {
@@ -21,16 +32,16 @@ class ViewController: UIViewController {
         PIQ.doSomething()
         
         //imageView.piQ_RoundImage()
-        bgImageView.piQ_RoundImage()
-        imageView.piQ_triangle()
+        bgImageView.piQ_triangle_DOWN()
+        imageView.piQ_triangle_UP()
+        
+        
         imageView.piQ_convertToGrayScale(.Tonality)
   
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 

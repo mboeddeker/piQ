@@ -32,7 +32,7 @@ extension UIImageView {
     }
     
     
-    public func piQ_triangle(){
+    public func piQ_triangle_UP(){
 
         let layerHeight = self.layer.frame.height
         let layerWidth = self.layer.frame.width
@@ -58,6 +58,38 @@ extension UIImageView {
         self.layer.mask = mask
         
     }
+    
+    
+    
+    public func piQ_triangle_DOWN(){
+        
+        let layerHeight = self.layer.frame.height
+        let layerWidth = self.layer.frame.width
+        
+        
+        // Create Path
+        let bezierPath = UIBezierPath()
+        
+        // Draw Points
+        bezierPath.moveToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth/2, y: layerHeight))
+        // bezierPath.addLineToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.closePath()
+        
+        
+        
+        // Mask to Path
+        let mask = CAShapeLayer()
+        mask.frame = self.bounds
+        mask.path = bezierPath.CGPath
+        
+        self.layer.mask = mask
+        
+    }
+    
+    
+    
     
     public enum filterNames {
         case Tonality
@@ -117,7 +149,45 @@ extension UIImageView {
         self.image = UIImage(CGImage: filteredImageRef)
         
     }
+    
+    public func piQ_tintImageColor(color: UIColor){
+        self.image = self.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        self.tintColor = color
+        
+    }
 
-
+    public func piQ_rotateImage(){
+        self.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / 180.0)
+    }
+    
+    public func piQ_rotateImageWithAnimation(Duration:Double){
+        rotateFirst(self, time: Duration)
+        rotateSecond(self, time: Duration)
+        
+    }
+    
+    
+    
+    
+    
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
+    func rotateFirst(image: UIImageView!, time:Double){
+        
+        
+        UIView.animateWithDuration(time / 2, animations: {
+            image.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / 180.0)
+            
+        })
+    }
+    
+    func rotateSecond(image: UIImageView!, time:Double){
+        
+        
+        UIView.animateWithDuration(time / 2, animations: {
+            image.transform = CGAffineTransformMakeRotation((0.0 * CGFloat(M_PI)) / 180.0)
+            
+        })
+    }
     
 }
