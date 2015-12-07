@@ -17,23 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pic1" translatesAutoresizingMaskIntoConstraints="NO" id="poN-8t-KYO">
-                                <rect key="frame" x="233" y="232" width="135" height="135"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enchanted-abbey_1914053i" translatesAutoresizingMaskIntoConstraints="NO" id="vz3-pE-Mfx">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="135" id="LH3-Uo-gjw"/>
-                                    <constraint firstAttribute="width" constant="135" id="VK4-Kl-0zT"/>
+                                    <constraint firstAttribute="width" constant="300" id="P7C-wX-L4e"/>
+                                    <constraint firstAttribute="height" constant="300" id="gvB-5X-Pmd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enchanted-abbey_1914053i" translatesAutoresizingMaskIntoConstraints="NO" id="poN-8t-KYO">
+                                <rect key="frame" x="150.5" y="150" width="300" height="300"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="KKO-3O-MzQ"/>
+                                    <constraint firstAttribute="height" constant="300" id="sd0-wU-mF9"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="poN-8t-KYO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="36f-T0-czz"/>
-                            <constraint firstItem="poN-8t-KYO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aCL-kT-zfp"/>
+                            <constraint firstItem="poN-8t-KYO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rzl-wB-6Xs"/>
+                            <constraint firstItem="vz3-pE-Mfx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p99-nG-t9D"/>
+                            <constraint firstItem="poN-8t-KYO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tNH-zL-QDZ"/>
+                            <constraint firstItem="vz3-pE-Mfx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v1l-m2-TSm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bgImageView" destination="vz3-pE-Mfx" id="Fj0-yU-tN4"/>
                         <outlet property="imageView" destination="poN-8t-KYO" id="rkw-9z-nn9"/>
                     </connections>
                 </viewController>
@@ -43,6 +54,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pic1" width="370" height="270"/>
+        <image name="enchanted-abbey_1914053i" width="620" height="414"/>
     </resources>
 </document>

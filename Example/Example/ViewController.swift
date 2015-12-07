@@ -11,6 +11,7 @@ import piQ
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
     let PIQ = piQ()
 
@@ -19,8 +20,10 @@ class ViewController: UIViewController {
         
         PIQ.doSomething()
         
-        imageView.piQ_RoundImage()
-        imageView.piQ_convertToGrayScale(.Dots)
+        //imageView.piQ_RoundImage()
+        bgImageView.piQ_RoundImage()
+        imageView.piQ_triangle()
+        imageView.piQ_convertToGrayScale(.Tonality)
   
         // Do any additional setup after loading the view, typically from a nib.
     }
