@@ -31,7 +31,6 @@ extension UIImageView {
         self.layer.cornerRadius = self.frame.size.width / 2
     }
     
-    
     public func piQ_triangle_UP(){
 
         let layerHeight = self.layer.frame.height
@@ -59,8 +58,6 @@ extension UIImageView {
         
     }
     
-    
-    
     public func piQ_triangle_DOWN(){
         
         let layerHeight = self.layer.frame.height
@@ -87,9 +84,6 @@ extension UIImageView {
         self.layer.mask = mask
         
     }
-    
-    
-    
     
     public enum filterNames {
         case Tonality
@@ -166,7 +160,41 @@ extension UIImageView {
         
     }
     
+    public func piQ_imageFromUrl(urlString: String) {
+        
+        
+        if let url = NSURL(string: urlString) {
+            let request = NSURLRequest(URL: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                if data != nil {
+                self.image = UIImage(data: data!)
+                } else {
+                    print("Error Loading Image")
+                }
+            }
+            }
+    }
     
+    public func piQ_imageFromUrl(urlString: String, placeholderImage: UIImage) {
+        
+        //Use your Placeholder, if you download an image with big loading times.
+        self.image = placeholderImage
+        
+        if let url = NSURL(string: urlString) {
+            let request = NSURLRequest(URL: url)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+                if data != nil {
+                self.image =  UIImage(data: data!)
+                } else {
+                    print("Error Loading Image")
+                }
+            }
+        } else {
+            print("Error Loading Image")
+        }
+    }
     
     
     
@@ -189,5 +217,8 @@ extension UIImageView {
             
         })
     }
+
+    
+    
     
 }
