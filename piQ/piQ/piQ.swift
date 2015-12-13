@@ -26,6 +26,20 @@ public class piQ{
 
 extension UIImageView {
     
+    /*=========================================================
+    
+                            *GEOMETRICS*
+    
+    
+    Usage:  Import piQ and define your ImageView. After that 
+            take your geometric mask. Example:
+    
+            myImageView.piQ_RoundImage()
+    
+            Thats it!
+    
+    =========================================================*/
+    
     public func piQ_RoundImage(){
         self.clipsToBounds = true
         self.layer.cornerRadius = self.frame.size.width / 2
@@ -84,6 +98,112 @@ extension UIImageView {
         self.layer.mask = mask
         
     }
+    
+    public func piQ_Pentagon(){
+        
+        let layerHeight = self.layer.frame.height
+        let layerWidth = self.layer.frame.width
+        
+        
+        // Create Path
+        let bezierPath = UIBezierPath()
+        
+        // Draw Points
+        bezierPath.moveToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth/2, y: layerHeight))
+        // bezierPath.addLineToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.closePath()
+        
+        
+        
+        // Mask to Path
+        let mask = CAShapeLayer()
+        mask.frame = self.bounds
+        mask.path = bezierPath.CGPath
+        
+        self.layer.mask = mask
+        
+    }
+    
+    public func piQ_Hexagon(){
+        
+        let layerHeight = self.layer.frame.height
+        let layerWidth = self.layer.frame.width
+        
+        
+        // Create Path
+        let bezierPath = UIBezierPath()
+        
+        // Draw Points
+        bezierPath.moveToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth/2, y: layerHeight))
+        // bezierPath.addLineToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.closePath()
+        
+        
+        
+        // Mask to Path
+        let mask = CAShapeLayer()
+        mask.frame = self.bounds
+        mask.path = bezierPath.CGPath
+        
+        self.layer.mask = mask
+        
+    }
+
+    public func piQ_Octagon(){
+        
+        let layerHeight = self.layer.frame.height
+        let layerWidth = self.layer.frame.width
+        
+        
+        // Create Path
+        let bezierPath = UIBezierPath()
+        
+        // Draw Points
+        bezierPath.moveToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth, y: 0))
+        bezierPath.addLineToPoint(CGPoint(x: layerWidth/2, y: layerHeight))
+        // bezierPath.addLineToPoint(CGPoint(x: 0, y: 0))
+        bezierPath.closePath()
+        
+        
+        
+        // Mask to Path
+        let mask = CAShapeLayer()
+        mask.frame = self.bounds
+        mask.path = bezierPath.CGPath
+        
+        self.layer.mask = mask
+        
+    }
+
+    
+    
+    
+    
+
+    /*=========================================================
+    
+                        *IMAGEFILTER*
+    
+    
+    Usage:  Import piQ and define your ImageView. After that
+            take your filterfamily and your filter. Example:
+    
+            myImageView.piQ_convertToGrayScale(imageFilter: .Noir)
+    
+            Thats it!
+    
+    
+            *TODO*:
+            I'm working on some new retro and vintage filter.
+            Cooming soon.
+    
+    =========================================================*/
+    
     
     public enum filterNames {
         case Tonality
@@ -149,6 +269,39 @@ extension UIImageView {
         self.tintColor = color
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*=========================================================
+    
+                        *IMAGEANIMATIONS*
+    
+    
+    Usage:  Import piQ and define your ImageView. After that
+            take your animationstyle. Example:
+    
+            myImageView.piQ_rotateImageWithAnimation(Duration:3)
+    
+            With this example function, you can animate your 
+            ImageViews. You can decide how long.
+    
+            Thats it!
+    
+    
+            *TODO*:
+            Creating some new Animations ;)
+    
+    =========================================================*/
 
     public func piQ_rotateImage(){
         self.transform = CGAffineTransformMakeRotation((180.0 * CGFloat(M_PI)) / 180.0)
@@ -159,6 +312,29 @@ extension UIImageView {
         rotateSecond(self, time: Duration)
         
     }
+    
+    
+    
+    
+    
+    
+    
+    /*=========================================================
+    
+                        *IMAGELOADING*
+    
+    
+    Usage:  Import piQ and define your ImageView. Now you can 
+            load your image with an URL. Both functions are 
+            working asynchronously, but do you wanna use it,
+            with one of the other functions of piQ, than use it
+            with a placeholder. It's more safe.
+    
+            Example:
+            myImageView.piQ_imageFromURL(urlString: "http://pic.jpg")
+    =========================================================*/
+    
+    
     
     public func piQ_imageFromUrl(urlString: String) {
         
