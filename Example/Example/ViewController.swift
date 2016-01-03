@@ -36,10 +36,15 @@ class ViewController: UIViewController {
         bgImageView.piQ_imageFromUrl("https://s3.amazonaws.com/cocoacontrols_production/uploads/control_image/image/7902/charizard.png", placeholderImage: placeHolderPic)
         bgImageView.piQ_triangle_DOWN()
         imageView.piQ_imageFromUrl("http://drschmitz.info/wp-content/gallery/rajede/wolf.jpg", placeholderImage: placeHolderPic)
-        imageView.piQ_triangle_UP()
+        //imageView.piQ_triangle_UP()
+        imageView.piQ_RoundImage()
         
         
-        imageView.piQ_convertToGrayScale(.Tonality)
+        imageView.piQ_convertToGrayScale(.Noir)
+        
+        bgImageView.hidden = true
+        
+        
   
     }
 

@@ -268,6 +268,8 @@ extension UIImageView {
         self.image = self.image!.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         self.tintColor = color
         
+        
+        
     }
     
     
