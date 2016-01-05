@@ -94,6 +94,8 @@ yourImageView.piQ_tintImageColor(UIColor.blueColor())
 
 ### Animations
 
+####Rotate
+
 <img src=https://cdn.pbrd.co/images/wJgD2UB.png width=240 height=400 />
 <img src=https://cdn.pbrd.co/images/wJiC4sG.png width=240 height=400 />
 
@@ -108,7 +110,25 @@ yourImage.piQ_rotateImageWithAnimation(6)
 
 ~~~
 
+####Hide and Show
 
+<img src=https://cdn.pbrd.co/images/zOTKRPz.gif width=240 height=400 />
+
+That is really simple. Create an outlet of that HeightConstraint from your ImageView.
+
+~~~swift
+
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    //Your ImageViewHeight 
+    
+    @IBAction func hideShowButton(sender: AnyObject) {
+
+        PIQ.toggleImageViewVisibility(self, ImageConstraint: imageViewHeightConstraint)
+        
+    }
+
+
+~~~
 
 ##Future
 piQ is a real simple framework, but I will work on it. The next steps are more geometrics, like a hexagon or an octagon. The other next big things are imagefilters. I'm working on some nice filters like in Instagram. 

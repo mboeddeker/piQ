@@ -23,6 +23,23 @@ class ViewController: UIViewController {
         imageView.piQ_rotateImageWithAnimation(6)
     }
     
+    
+    
+    //**** HIDE SHOW ANIMATION
+    
+    
+    
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    @IBAction func hideShowButton(sender: AnyObject) {
+        
+
+        
+        PIQ.toggleImageViewVisibility(self, ImageConstraint: imageViewHeightConstraint)
+        
+    }
+    
+    
+    
     let placeHolderPic:UIImage = UIImage(named: "enchanted-abbey_1914053i")!
     
     let PIQ = piQ()
@@ -30,14 +47,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PIQ.doSomething()
+        
         
         //imageView.piQ_RoundImage()
         bgImageView.piQ_imageFromUrl("https://s3.amazonaws.com/cocoacontrols_production/uploads/control_image/image/7902/charizard.png", placeholderImage: placeHolderPic)
         bgImageView.piQ_triangle_DOWN()
         imageView.piQ_imageFromUrl("http://drschmitz.info/wp-content/gallery/rajede/wolf.jpg", placeholderImage: placeHolderPic)
-        //imageView.piQ_triangle_UP()
-        imageView.piQ_RoundImage()
+        imageView.piQ_triangle_UP()
+        //imageView.piQ_RoundImage()
         
         
         imageView.piQ_convertToGrayScale(.Noir)

@@ -17,10 +17,27 @@ public class piQ{
         print("Class has been initialised")
     }
     
-    public func doSomething(){
-    print("Yeah, it works")
-    }
     
+/*========================================TOGGLEVISIBILITYANIMATION============================================*/
+    
+    public var imageHeightVisible : CGFloat!
+    
+    public func toggleImageViewVisibility(Controller: UIViewController, ImageConstraint : NSLayoutConstraint){
+        
+        let animated : Bool = true
+       
+        
+        if ImageConstraint.constant != 0 {
+            imageHeightVisible = ImageConstraint.constant
+            ImageConstraint.constant = 0
+        } else {
+            ImageConstraint.constant = imageHeightVisible
+        }
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                Controller.view.layoutIfNeeded()
+                }, completion: nil)
+    }
+/*=============================================================================================================*/
 
 }
 
@@ -316,6 +333,8 @@ extension UIImageView {
     }
     
     
+    
+
     
     
     
